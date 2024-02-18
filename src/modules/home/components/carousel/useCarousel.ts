@@ -1,15 +1,14 @@
+import { CarouselRef } from 'antd/es/carousel'
 import { useRef } from 'react'
 
 const useCarousel = () => {
-  const carouselRef = useRef(null)
+  const carouselRef = useRef<CarouselRef>(null)
 
   const handleBack = () => {
-    if (!carouselRef) return
-    carouselRef.current.prev()
+    if (carouselRef.current) carouselRef.current.prev()
   }
   const handleNext = () => {
-    if (!carouselRef) return
-    carouselRef.current.next()
+    if (carouselRef.current) carouselRef.current.next()
   }
   return { carouselRef, handleBack, handleNext }
 }

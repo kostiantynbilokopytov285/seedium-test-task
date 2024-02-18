@@ -35,5 +35,9 @@ export const StyledDescription = styled(Paragraph)`
     text-align: center;
     color: #a5a6a7;
     padding: 0 62px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 `
