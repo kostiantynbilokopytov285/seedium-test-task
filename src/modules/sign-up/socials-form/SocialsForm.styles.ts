@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import Link from 'next/link'
 
 import { Typography } from 'antd'
-import exp from 'constants'
 
 const { Paragraph, Title } = Typography
 
@@ -15,6 +14,7 @@ export const StyledTitle = styled(Title)`
     letter-spacing: 0em;
     text-align: left;
     margin: 0;
+    padding: 0 0 14px 0;
   }
 `
 
@@ -27,6 +27,7 @@ export const StyledParagraph = styled(Paragraph)`
     letter-spacing: 0em;
     text-align: left;
     margin: 0;
+    padding: 0 0 39px 0;
   }
 `
 
@@ -55,9 +56,11 @@ export const StyledSocialButton = styled.button`
 export const StyledDividedParagraph = styled.p`
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #4c4d4f80;
   line-height: 0.1em;
   margin: 10px 0 20px;
+  padding: 37px 0 0 0;
+  color: #4c4d4f80;
 
   span {
     background: #fff;

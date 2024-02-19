@@ -1,4 +1,6 @@
 'use client'
+import Image from 'next/image'
+
 import Flex from '@/modules/common/components/flex'
 
 import SignUpForm from './sign-up-form'

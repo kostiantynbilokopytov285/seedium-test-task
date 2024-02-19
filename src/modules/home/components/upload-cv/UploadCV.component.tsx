@@ -1,17 +1,15 @@
-import { Upload } from 'antd'
+import Image from 'next/image'
 
-import Flex from '@/modules/common/components/flex'
-
+import { StyledDragger, StyledParagraph, StyledTitle } from './UploadCV.styles'
 import uploadProps from './upload.props'
-
-const { Dragger } = Upload
 
 const UploadCV = () => (
   <>
-    <Dragger {...uploadProps}>
-      <p className="ant-upload-text">Upload CV</p>
-      <p className="ant-upload-hint">( PDF or DOCX )</p>
-    </Dragger>
+    <StyledDragger {...uploadProps}>
+      <Image src="upload.svg" alt="la[top" width={94} height={94} />
+      <StyledTitle>Upload CV</StyledTitle>
+      <StyledParagraph>( PDF or DOCX )</StyledParagraph>
+    </StyledDragger>
   </>
 )
 

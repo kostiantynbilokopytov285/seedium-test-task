@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import GoogleProvider from 'next-auth/providers/google'
 
 import { compare } from 'bcrypt'
 import { sql } from '@vercel/postgres'
@@ -7,6 +8,10 @@ import { sql } from '@vercel/postgres'
 const handler = NextAuth({
   session: { strategy: 'jwt' },
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+    }),
     CredentialsProvider({
       credentials: {
         email: {},
