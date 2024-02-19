@@ -2,7 +2,6 @@ import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth'
 
 import ROUTES from '@/modules/common/routes'
-import { RuleObject } from 'antd/es/form'
 
 export const isLoggedIn = async () => {
   return Boolean(await getServerSession())

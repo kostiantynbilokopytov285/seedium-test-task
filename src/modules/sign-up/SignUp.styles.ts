@@ -12,3 +12,9 @@ export const StyledImageWrapper = styled(Flex)`
     display: none;
   }
 `
+
+export const StyledFlex = styled(Flex)`
+  @media screen and (max-width: 768px) {
+    padding: 24px 12px;
+  }
+`

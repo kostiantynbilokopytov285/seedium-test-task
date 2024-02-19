@@ -4,12 +4,12 @@ import Flex from '@/modules/common/components/flex'
 import SignUpForm from './sign-up-form'
 import SocialsForm from './socials-form'
 
-import { StyledImage, StyledImageWrapper } from './SignUp.styles'
+import { StyledImage, StyledImageWrapper, StyledFlex } from './SignUp.styles'
 
 const SignUp = () => {
   return (
     <Flex $width="100%" $gap="0" $margin="auto" $justifyContent="center">
-      <Flex
+      <StyledFlex
         $borderTopLeftRadius="14px"
         $borderBottomLeftRadius="14px"
         $background="#ffffff"
@@ -20,7 +20,7 @@ const SignUp = () => {
       >
         <SocialsForm />
         <SignUpForm />
-      </Flex>
+      </StyledFlex>
       <StyledImageWrapper $position="relative" $maxWidth="384px" $width="100%">
         <StyledImage src="laptop.svg" fill alt="laptop" objectFit="cover" />
       </StyledImageWrapper>

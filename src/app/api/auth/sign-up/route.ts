@@ -1,3 +1,4 @@
+import { message } from 'antd'
 import { hash } from 'bcrypt'
 import { NextResponse } from 'next/server'
 import { sql } from '@vercel/postgres'
@@ -10,11 +11,13 @@ const POST = async (request: Request) => {
 
     const hashedPassword = await hash(password, SALT_OR_ROUNDS)
 
-    const response = await sql`
+    await sql`
     INSERT INTO users (email, password)
     VALUES (${email}, ${hashedPassword})
     `
-  } catch (e) {}
+  } catch (e) {
+    message.error('Error')
+  }
 
   return NextResponse.json({ message: 'success ' })
 }
