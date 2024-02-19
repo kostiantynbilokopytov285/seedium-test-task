@@ -20,9 +20,6 @@ const Carousel = () => {
         autoplaySpeed={AUTOPLAY_SPEED}
         ref={carouselRef}
         speed={ANIMATION_SPEED}
-        style={{
-          maxWidth: '600px'
-        }}
       >
         {SLIDES.map(({ avatar, description, name }) => (
           <Fragment key={name}>

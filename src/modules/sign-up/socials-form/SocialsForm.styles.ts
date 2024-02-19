@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 
 import { Typography } from 'antd'
 
@@ -28,29 +27,13 @@ export const StyledParagraph = styled(Paragraph)`
     text-align: left;
     margin: 0;
     padding: 0 0 39px 0;
+    color: rgba(76, 77, 79, 0.5);
   }
-`
 
-export const StyledLink = styled(Link)``
-
-export const StyledSocialButton = styled.button`
-  all: unset;
-  width: 100%;
-  height: 48px;
-  border-radius: 24px;
-  border: 1px solid #4c4d4f;
-  text-align: center;
-  font-family: var(--font-cabin);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 0em;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  cursor: pointer;
+  &.ant-typography a {
+    text-decoration: underline;
+    color: #000000;
+  }
 `
 
 export const StyledDividedParagraph = styled.p`

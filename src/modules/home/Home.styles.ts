@@ -8,6 +8,13 @@ export const StyledWrapper = styled(Flex)`
   grid-column-gap: 40px;
   grid-row-gap: 44px;
   width: 100%;
+
+  @media screen and (max-width: 968px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin: auto;
+    justify-content: center;
+  }
 `
 
 export const StyledHomeItemWrapper = styled(Flex)`
@@ -15,6 +22,11 @@ export const StyledHomeItemWrapper = styled(Flex)`
   height: 367px;
   border-radius: 14px;
   background-color: #ffffff;
+  min-height: 0px;
+  min-width: 0px;
+  @media screen and (max-width: 968px) {
+    max-width: none;
+  }
 `
 
 export const StyledUploaderWrapper = styled(StyledHomeItemWrapper)`
@@ -23,4 +35,16 @@ export const StyledUploaderWrapper = styled(StyledHomeItemWrapper)`
 
 export const StyledUploadWithAIWrapper = styled(StyledHomeItemWrapper)`
   background: linear-gradient(108.58deg, #c5dce4 25.3%, #dbb898 82.65%);
+`
+
+export const StyledCarouselWrapper = styled.div`
+  max-width: 614px;
+  height: 367px;
+  border-radius: 14px;
+  background-color: #ffffff;
+  min-height: 0px;
+  min-width: 0px;
+  @media screen and (max-width: 968px) {
+    max-width: none;
+  }
 `

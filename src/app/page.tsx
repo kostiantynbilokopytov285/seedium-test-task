@@ -1,5 +1,9 @@
 import HomePage from '@/modules/home'
 
-export default function Home() {
+import { redirectNotLoggedIn } from '@/utils'
+
+export default async function Home() {
+  await redirectNotLoggedIn()
+
   return <HomePage />
 }

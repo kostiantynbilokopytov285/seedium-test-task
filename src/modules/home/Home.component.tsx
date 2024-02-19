@@ -6,6 +6,7 @@ import HomePageVideo from './components/home-page-video'
 import UploadCV from './components/upload-cv'
 
 import {
+  StyledCarouselWrapper,
   StyledWrapper,
   StyledHomeItemWrapper,
   StyledUploaderWrapper,
@@ -20,9 +21,9 @@ const Home = () => (
     <StyledUploaderWrapper>
       <UploadCV />
     </StyledUploaderWrapper>
-    <StyledHomeItemWrapper>
+    <StyledCarouselWrapper>
       <Carousel />
-    </StyledHomeItemWrapper>
+    </StyledCarouselWrapper>
     <StyledUploadWithAIWrapper>
       <CreateCVWithAI />
     </StyledUploadWithAIWrapper>

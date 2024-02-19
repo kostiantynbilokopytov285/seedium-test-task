@@ -1,10 +1,28 @@
 import styled from 'styled-components'
-import { Form, Button, Input } from 'antd'
+import { Form, Button, Input, Typography } from 'antd'
+
+const { Paragraph } = Typography
 
 export const StyledFormWrapper = styled.div`
   background-color: #ffffff;
   padding: 0 0 37px 0;
   max-width: 472px;
+  &.ant-typography {
+    font-family: PT Serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+    padding: 0 0 14px 0;
+    color: rgba(76, 77, 79, 0.5);
+  }
+
+  &.ant-typography a {
+    text-decoration: underline;
+    color: #000000;
+  }
 `
 
 export const StyledForm = styled(Form)`
@@ -86,11 +104,40 @@ export const StyledButton = styled(Button)`
     width: 100%;
     border-radius: 24px;
     padding: 13px 0;
+    margin: 0 0 8px 0;
+  }
+
+  .ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    margin: 0 0 8px 0;
   }
 `
 
 export const StyledFormItem = styled(Form.Item)`
   &.ant-form-item {
     width: 100%;
+  }
+`
+
+export const StyledParagraph = styled(Paragraph)`
+  &.ant-typography {
+    font-family: PT Serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+    padding: 0 0 14px 0;
+    color: rgba(76, 77, 79, 0.5);
+  }
+
+  &.ant-typography a {
+    text-decoration: underline;
+    color: #000000;
+  }
+
+  &.ant-typography a:hover {
+    text-decoration: none;
+    color: #000000;
   }
 `

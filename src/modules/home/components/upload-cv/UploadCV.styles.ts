@@ -8,6 +8,10 @@ export const StyledDragger = styled(Dragger)`
   &.ant-upload-wrapper {
     width: 100%;
   }
+
+  &.ant-upload-wrapper .ant-upload-drag {
+    border: none;
+  }
 `
 
 export const StyledParagraph = styled(Paragraph)`

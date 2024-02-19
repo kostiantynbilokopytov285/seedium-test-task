@@ -7,6 +7,10 @@ interface IFlexProps {
   $backgroundImage?: string
   $bottom?: string
   $borderRadius?: string
+  $borderTopLeftRadius?: string
+  $borderTopRightRadius?: string
+  $borderBottomLeftRadius?: string
+  $borderBottomRightRadius?: string
   $border?: string
   $boxShadow?: string
   $display?: 'flex' | 'none'
@@ -44,6 +48,11 @@ interface IFlexProps {
 }
 
 const Flex = styled.div<IFlexProps>`
+  box-sizing: border-box;
+  border-top-left-radius: ${(props) => props.$borderTopLeftRadius};
+  border-top-right-radius: ${(props) => props.$borderTopRightRadius};
+  border-bottom-left-radius: ${(props) => props.$borderBottomLeftRadius};
+  border-bottom-right-radius: ${(props) => props.$borderBottomRightRadius};
   flex: ${(props) => props.$flex};
   position: ${(props) => props.$position};
   justify-content: ${(props) => props.$justifyContent};

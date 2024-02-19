@@ -1,5 +1,11 @@
 import SignUp from '@/modules/sign-up/'
 
-const SignUpPage = () => <SignUp />
+import { redirectLoggedIn } from '@/utils'
+
+const SignUpPage = async () => {
+  await redirectLoggedIn()
+
+  return <SignUp />
+}
 
 export default SignUpPage

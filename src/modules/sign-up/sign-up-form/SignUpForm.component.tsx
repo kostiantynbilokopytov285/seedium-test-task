@@ -1,6 +1,6 @@
 'use client'
 
-import { Checkbox, Form, Typography } from 'antd'
+import { Checkbox, Form } from 'antd'
 import Link from 'next/link'
 
 import Flex from '@/modules/common/components/flex'
@@ -14,11 +14,10 @@ import {
   StyledButton,
   StyledFormWrapper,
   StyledInput,
-  StyledFormItem
-} from './SignUpForm.styles'
+  StyledFormItem,
+  StyledParagraph
+} from '@/modules/common/styles'
 import useSignUpForm from './useSignUpForm'
-
-const { Paragraph } = Typography
 
 const SignUpForm = () => {
   const { handleSubmit } = useSignUpForm()
@@ -87,7 +86,7 @@ const SignUpForm = () => {
         <Form.Item name="remember" valuePropName="checked">
           <Checkbox>Subscribe to our monthly newsletter</Checkbox>
         </Form.Item>
-        <Paragraph>
+        <StyledParagraph>
           By clicking below you agree to our{' '}
           <Link
             href={TERMS_OF_SERVICE_LINK}
@@ -96,20 +95,21 @@ const SignUpForm = () => {
           >
             Terms of Service
           </Link>{' '}
-          and
+          and{' '}
           <Link
             href={PRIVACY_POLICY_LINK}
             rel="noopener noreferrer"
             target="_blank"
           >
-            {' '}
             Privacy Policy
           </Link>
-        </Paragraph>
+        </StyledParagraph>
         <StyledButton htmlType="submit">Sign Up</StyledButton>
-        <Paragraph>
-          Already have an account? <Link href={ROUTES.LOGIN}>Log in</Link>
-        </Paragraph>
+        <Flex $margin="auto" $justifyContent="center">
+          <StyledParagraph>
+            Already have an account? <Link href={ROUTES.LOGIN}>Log in</Link>
+          </StyledParagraph>
+        </Flex>
       </Form>
     </StyledFormWrapper>
   )

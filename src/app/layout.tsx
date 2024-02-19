@@ -1,14 +1,11 @@
 import type { Metadata } from 'next'
-import { getServerSession } from 'next-auth'
 import { AntdRegistry } from '@ant-design/nextjs-registry'
 import { Cabin } from 'next/font/google'
+import { isLoggedIn } from '@/utils'
 
-import Logout from '@/modules/logout'
 import StyledComponentsRegistry from '@/modules/common/components/registry'
 
 import './globals.css'
-import Link from 'next/link'
-import ROUTES from '@/modules/common/routes'
 
 import Container from '@/modules/common/components/container'
 import Header from '@/modules/common/components/header'
@@ -25,20 +22,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const session = await getServerSession()
-
   return (
     <html lang="en">
       <body className={cabin.className}>
         <StyledComponentsRegistry>
           <AntdRegistry>
-            <Header />
+            <Header isLoggedIn={await isLoggedIn()} />
             <Container>{children}</Container>
           </AntdRegistry>
         </StyledComponentsRegistry>
-        {/* <nav>
-          {session ? <Logout /> : <Link href={ROUTES.LOGIN}>Login</Link>}
-        </nav> */}
       </body>
     </html>
   )

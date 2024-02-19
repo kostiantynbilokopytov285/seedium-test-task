@@ -1,3 +1,7 @@
+import { signIn } from 'next-auth/react'
+
+import ROUTES from '@/modules/common/routes'
+
 interface IHandleSubmitParams {
   email: string
   firstName: string
@@ -12,7 +16,7 @@ const useSignUpForm = () => {
     lastName,
     password
   }: IHandleSubmitParams) => {
-    await fetch(`/api/auth/sign-up`, {
+    const response = await fetch(`/api/auth/sign-up`, {
       method: 'POST',
       body: JSON.stringify({
         email,
@@ -21,6 +25,15 @@ const useSignUpForm = () => {
         password
       })
     })
+
+    if (response.status === 200) {
+      await signIn('credentials', {
+        email: email,
+        password: password,
+        redirect: true,
+        callbackUrl: ROUTES.HOME
+      })
+    }
 
     return null
   }
